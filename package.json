@@ -9,13 +9,14 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev":  "nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
     "git": "^0.1.5",
+    "mongoose": "^6.1.8",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-google-oauth20": "^2.0.0"
