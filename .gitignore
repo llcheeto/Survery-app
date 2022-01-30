@@ -1,6 +1,4 @@
-node_modules
+./node_modules
 dev.js
 .vscode
-
-
-
+node_modules
