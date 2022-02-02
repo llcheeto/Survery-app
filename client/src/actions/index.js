@@ -5,4 +5,4 @@ const fetchUser = () => {
   axios.get('/api/current_user');
 };
 
-//comment for commit
+//comment for commit to fix commits 
