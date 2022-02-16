@@ -1,5 +1,3 @@
-const { stripePublishableKey } = require("./dev");
-
 // production keys
 module.exports = {
   googleClientID: process.env.GOOGLE_CLIENT_ID,
