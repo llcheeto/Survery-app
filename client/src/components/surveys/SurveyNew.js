@@ -4,7 +4,6 @@ class SurveyNew extends Component {
   render() {
     return (
       <div>
-        SurveyNew!
       </div>
     );
   }
