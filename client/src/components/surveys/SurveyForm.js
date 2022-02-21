@@ -1,6 +1,8 @@
 // Shows a form for a user to add imput
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { Link } from 'react-router-dom';
+import validateEmails from '../../utils/validateEmails';
 
 
 class SurveyForm extends Component {
@@ -15,20 +17,26 @@ class SurveyForm extends Component {
           <Field
           placeholder="Subject Line" 
           type="text"
-          name="Subject"
+          name="subject"
           component="input"/>
           <Field
           placeholder="Email Body" 
           type="text"
-          name="Body"
+          name="body"
           component="input"/>
           <Field
           placeholder="Recipient List" 
           type="text"
-          name="Email"
+          name="emails"
           component="input"/>
         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
-          <button type="submit">Submit</button>
+          <Link to ="/surveys" className="red btn-flat left white-text">
+            Cancel
+          </Link>
+          <button type="submit" className="teal btn-flat right white-text">
+            Next
+            <i className="material-icons right">done</i>
+          </button>
         </form>
       </div>
     );
@@ -45,8 +53,28 @@ class SurveyForm extends Component {
   }
 */
 
+function validate (values) {
+  const errors = {};
 
+  errors.emails = validateEmails(values.emails || '');
+
+  
+  if (!values.title) {
+    errors.title = 'You must provide a title';
+  }
+  if (!values.subject) {
+    errors.subject = 'You must provide a subject';
+  }
+  if (!values) {
+    errors.body = 'You must provide a body';
+  }
+  if (!values) {
+    errors.emails = 'You must provide a body';
+  }
+  return errors;
+}
 
 export default reduxForm({
+  validate,
   form: 'surveyForm'
 })(SurveyForm);
