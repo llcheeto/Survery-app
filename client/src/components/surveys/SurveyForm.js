@@ -29,7 +29,7 @@ class SurveyForm extends Component {
           type="text"
           name="emails"
           component="input"/>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <form onSubmit={this.props.handleSubmit(() => this.props.onSurveySubmit())}>
           <Link to ="/surveys" className="red btn-flat left white-text">
             Cancel
           </Link>
